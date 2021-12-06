@@ -1,44 +1,4 @@
-const challengeOne = (data) => {
-  let distance = 0;
-  let height = 0;
-
-  data.forEach(dataPoint => {
-    if (dataPoint?.forward) {
-      distance += dataPoint.forward;
-    }
-    if (dataPoint?.up) {
-      height -= dataPoint.up;
-    }
-    if (dataPoint?.down) {
-      height += dataPoint.down;
-    }
-  })
-
-  return distance * height;
-}
-
-const challengeTwo = (data) => {
-  let horizontalPosition = 0;
-  let depth = 0;
-  let aim = 0;
-
-  data.forEach(dataPoint => {
-    if (dataPoint?.forward) {
-      horizontalPosition += dataPoint.forward;
-      depth += aim * dataPoint.forward;
-    }
-    if (dataPoint?.up) {
-      aim -= dataPoint.up;
-    }
-    if (dataPoint?.down) {
-      aim += dataPoint.down;
-    }
-  })
-
-  return horizontalPosition * depth;
-}
-
-const dataSet = [
+export const data = [
   { forward: 7 },
   { down: 2 },
   { forward: 7 },
@@ -1040,5 +1000,3 @@ const dataSet = [
   { down: 5 },
   { forward: 7 },
 ];
-
-console.log(challengeTwo(dataSet));
